@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Model Marketplace</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="script.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>AI Model Marketplace</h1>
+    <section id="list-model">
+      <h2>List a New AI Model</h2>
+      <form id="list-model-form">
+        <input type="text" id="model-name" placeholder="Model Name" required />
+        <textarea
+          id="model-description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input
+          type="number"
+          id="model-price"
+          placeholder="Price (ETH)"
+          required
+        />
+        <button type="submit">List Model</button>
+      </form>
+    </section>
+    <section id="model-list">
+      <h2>Available Models</h2>
+      <div id="models"></div>
+    </section>
+    <section id="withdraw-funds">
+      <h2>Withdraw Funds</h2>
+      <button id="withdraw-btn">Withdraw</button>
+    </section>
 
-    <div id="listModel">
-        <h2>List a New Model</h2>
-        <input id="name" type="text" placeholder="Model Name">
-        <textarea id="description" placeholder="Model Description"></textarea>
-        <input id="price" type="number" placeholder="Price (in ETH)">
-        <button onclick="listModel()">List Model</button>
-    </div>
-
-    <div id="modelsList">
-        <h2>Available Models</h2>
-        <div id="modelsContainer"></div>
-    </div>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
